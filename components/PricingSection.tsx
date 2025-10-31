@@ -14,7 +14,7 @@ export default function PricingSection() {
   const plans = [
     {
       name: '軽トラ半パック',
-      badge: '安さNO.1',
+      badge: '安さ\nNO.1',
       description: '少量の不用品回収はこちら',
       items: '運賃（軽トラ）＋作業費＋スタッフ費',
       price: '3,300〜7,700円',
@@ -24,7 +24,7 @@ export default function PricingSection() {
     },
     {
       name: '軽トラパック',
-      badge: '迷ったらこれ',
+      badge: '迷ったら\nこれ！',
       description: '単身のお引っ越し等に',
       items: '運賃（軽トラ）＋作業費＋スタッフ費',
       price: '8,800〜15,400円',
@@ -34,7 +34,7 @@ export default function PricingSection() {
     },
     {
       name: '軽トラ特盛パック',
-      badge: '家族向け',
+      badge: 'たっぷり\nお得！',
       description: '家族のお引っ越し等に最適なサイズ',
       items: '運賃（軽トラ）＋作業費＋スタッフ費',
       price: '15,400〜31,900円',
@@ -66,11 +66,38 @@ export default function PricingSection() {
               className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200"
             >
               <div className="text-white py-6 px-6" style={{ background: `linear-gradient(to bottom, ${plan.gradientFrom}, ${plan.gradientTo})` }}>
-                <span className="inline-block bg-white text-gray-900 text-xs font-bold px-4 py-1.5 rounded-full mb-3 shadow-lg">
-                  {plan.badge}
-                </span>
-                <h3 className={`font-bold mb-1 ${index === 2 ? 'text-[1.375rem]' : 'text-2xl'}`}>{plan.name}</h3>
-                <p className="text-sm opacity-90">{plan.description}</p>
+                {/* PC版ヘッダー */}
+                <div className="hidden xl:flex items-center gap-4">
+                  <div className="bg-white text-gray-900 w-24 h-24 rounded-full flex items-center justify-center text-[1.0625rem] font-bold shadow-lg flex-shrink-0 whitespace-pre-line text-center leading-tight">
+                    {plan.badge}
+                  </div>
+                  <div className="flex-1 min-w-0 flex flex-col justify-center">
+                    <h3 className="font-bold mb-2 text-3xl">{plan.name}</h3>
+                    <div className="border-t border-white mb-2"></div>
+                    <p className="text-sm opacity-90">{plan.description}</p>
+                  </div>
+                </div>
+
+                {/* タブレット版ヘッダー */}
+                <div className="hidden md:block xl:hidden">
+                  <span className="inline-block bg-white text-gray-900 text-xs font-bold px-4 py-1.5 rounded-full mb-3 shadow-lg">
+                    {plan.badge}
+                  </span>
+                  <h3 className={`font-bold mb-1 ${index === 2 ? 'text-[1.375rem]' : 'text-2xl'}`}>{plan.name}</h3>
+                  <p className="text-sm opacity-90">{plan.description}</p>
+                </div>
+
+                {/* スマホ版ヘッダー */}
+                <div className="md:hidden flex items-center gap-3">
+                  <div className="bg-white text-gray-900 w-16 h-16 rounded-full flex items-center justify-center text-xs font-bold shadow-lg flex-shrink-0 whitespace-pre-line text-center leading-tight">
+                    {plan.badge}
+                  </div>
+                  <div className="flex-1 min-w-0 flex flex-col justify-center">
+                    <h3 className="font-bold mb-1 text-xl">{plan.name}</h3>
+                    <div className="border-t border-white mb-1"></div>
+                    <p className="text-sm opacity-90">{plan.description}</p>
+                  </div>
+                </div>
               </div>
 
               <div className="p-6">
@@ -121,18 +148,27 @@ export default function PricingSection() {
           {/* 解体工事特別パック */}
           <div ref={specialPackAnimation.ref} className={`rounded-2xl shadow-lg overflow-hidden fade-in-up mt-8 ${specialPackAnimation.isVisible ? 'visible' : ''}`} style={{ backgroundColor: '#f5d10f', color: '#572A06' }}>
             <div className="p-8">
-              {/* タイトル（全デバイス共通） */}
-              <div className="flex items-center gap-3 mb-6 justify-center xl:justify-start">
-                <FaCrown className="text-3xl md:text-4xl xl:text-5xl" />
-                <h3 className="text-2xl md:text-3xl xl:text-4xl font-bold">解体工事特別パック</h3>
+              {/* タイトル（スマホ・タブレット） */}
+              <div className="xl:hidden flex items-center gap-3 mb-6 justify-center">
+                <FaCrown className="text-3xl md:text-4xl" />
+                <h3 className="text-2xl md:text-3xl font-bold">解体工事特別パック</h3>
               </div>
 
               {/* PC版：2カラムレイアウト */}
-              <div className="hidden xl:grid xl:grid-cols-2 gap-8 items-center">
-                <div>
-                  <p className="text-xl mb-6">
+              <div className="hidden xl:grid xl:grid-cols-2 gap-x-8">
+                <div className="flex flex-col">
+                  {/* PC版タイトル */}
+                  <div className="mb-4">
+                    <div className="flex items-center gap-3 mb-3">
+                      <FaCrown className="text-6xl" />
+                      <h2 className="text-5xl font-bold">解体工事特別パック</h2>
+                    </div>
+                    <div className="border-t border-[#572A06] mb-6"></div>
+                  </div>
+
+                  <h3 className="text-2xl font-bold mb-6">
                     回収＋解体工事パックでさらにお得！
-                  </p>
+                  </h3>
 
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center gap-3">
@@ -142,22 +178,20 @@ export default function PricingSection() {
                     <div className="flex items-start gap-3">
                       <span className="text-2xl flex-shrink-0 leading-none pt-1">★</span>
                       <p className="text-lg text-justify">
-                        解体工事会社が直接まとめてワンストップで行いますので、<br />
-                        中間マージンがかからず、<span className={`font-bold px-2 py-0.5 rounded ${specialPackAnimation.isVisible ? 'animate-highlighter' : ''}`} style={{ backgroundImage: 'linear-gradient(transparent 50%, #7ed957 50%)', backgroundRepeat: 'no-repeat', backgroundPosition: 'left bottom', backgroundSize: specialPackAnimation.isVisible ? undefined : '0% 60%' }}>10〜20万円程度安く出来ます！</span>
+                        解体工事会社が直接まとめてワンストップで行いますので、中間マージンがかからず、<span className={`font-bold px-2 py-0.5 rounded ${specialPackAnimation.isVisible ? 'animate-highlighter' : ''}`} style={{ backgroundImage: 'linear-gradient(transparent 50%, #7ed957 50%)', backgroundRepeat: 'no-repeat', backgroundPosition: 'left bottom', backgroundSize: specialPackAnimation.isVisible ? undefined : '0% 60%' }}>10〜20万円程度安く出来ます！</span>
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 h-64 flex items-center justify-center">
-                  <div className="relative w-full h-full">
-                    <Image
-                      src="/images/kaitai.jpg"
-                      alt="解体工事"
-                      fill
-                      className="object-cover rounded-lg"
-                    />
-                  </div>
+                <div className="relative w-full h-[300px] overflow-hidden rounded-2xl">
+                  <Image
+                    src="/images/kaitai2.jpg"
+                    alt="解体工事"
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: '50% 55%' }}
+                  />
                 </div>
               </div>
 
@@ -176,22 +210,20 @@ export default function PricingSection() {
                       </div>
                       <div className="flex items-start gap-2">
                         <span className="text-xl flex-shrink-0 leading-none pt-1">★</span>
-                        <p className="text-sm text-justify">
+                        <p className="text-sm text-justify pr-4">
                           解体工事会社が直接まとめてワンストップで行いますので、中間マージンがかからず、<span className={`font-bold px-1 py-0.5 rounded ${specialPackAnimation.isVisible ? 'animate-highlighter' : ''}`} style={{ backgroundImage: 'linear-gradient(transparent 50%, #7ed957 50%)', backgroundRepeat: 'no-repeat', backgroundPosition: 'left bottom', backgroundSize: specialPackAnimation.isVisible ? undefined : '0% 60%' }}>10〜20万円程度安く出来ます！</span>
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 h-48 flex items-center justify-center">
-                    <div className="relative w-full h-full">
-                      <Image
-                        src="/images/kaitai.jpg"
-                        alt="解体工事"
-                        fill
-                        className="object-cover rounded-lg"
-                      />
-                    </div>
+                  <div className="relative w-full h-48">
+                    <Image
+                      src="/images/kaitai.jpg"
+                      alt="解体工事"
+                      fill
+                      className="object-cover rounded-2xl"
+                    />
                   </div>
                 </div>
               </div>
@@ -215,24 +247,23 @@ export default function PricingSection() {
                   </div>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 h-48 flex items-center justify-center">
-                  <div className="relative w-full h-full">
-                    <Image
-                      src="/images/kaitai.jpg"
-                      alt="解体工事"
-                      fill
-                      className="object-cover rounded-lg"
-                    />
-                  </div>
+                <div className="relative w-full h-48">
+                  <Image
+                    src="/images/kaitai.jpg"
+                    alt="解体工事"
+                    fill
+                    className="object-cover rounded-2xl"
+                  />
                 </div>
               </div>
+
             </div>
           </div>
         </div>
       </div>
 
       {/* CTA - PC版のみ表示 */}
-      <div className="hidden xl:block text-white py-16 md:py-20 mt-16" style={{ backgroundColor: '#EC6C26' }}>
+      <div className="hidden xl:block text-white py-16 md:py-20" style={{ backgroundColor: '#EC6C26' }}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <h3 className="text-3xl md:text-4xl xl:text-5xl font-bold mb-4">
@@ -242,10 +273,10 @@ export default function PricingSection() {
           </div>
           <div className="flex flex-col md:flex-row gap-6 justify-center max-w-6xl mx-auto">
             <div className="flex-1">
-              <CTAButton variant="phone" size="2xl" fullWidth className="!h-20 !px-8 [&_span]:!text-4xl [&_img]:!w-14 [&_img]:!h-14" />
+              <CTAButton variant="phone" size="2xl" fullWidth showDescription className="!h-20 !px-8 [&_span]:!text-4xl [&_img]:!w-14 [&_img]:!h-14" />
             </div>
             <div className="flex-1">
-              <CTAButton variant="form" size="2xl" fullWidth className="!h-20 !px-8 [&_span]:!text-4xl [&_svg]:!text-[3.5rem]" />
+              <CTAButton variant="form" size="2xl" fullWidth showDescription className="!h-20 !px-8 [&_span]:!text-4xl [&_svg]:!text-[3.5rem]" />
             </div>
           </div>
         </div>

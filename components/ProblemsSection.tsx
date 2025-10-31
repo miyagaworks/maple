@@ -152,10 +152,10 @@ export default function ProblemsSection() {
           </div>
           <div className="flex flex-col md:flex-row gap-6 justify-center max-w-6xl mx-auto">
             <div className="flex-1">
-              <CTAButton variant="phone" size="2xl" fullWidth className="!h-20 !px-8 [&_span]:!text-4xl [&_img]:!w-14 [&_img]:!h-14" />
+              <CTAButton variant="phone" size="2xl" fullWidth showDescription className="!h-20 !px-8 [&_span]:!text-4xl [&_img]:!w-14 [&_img]:!h-14" />
             </div>
             <div className="flex-1">
-              <CTAButton variant="form" size="2xl" fullWidth className="!h-20 !px-8 [&_span]:!text-4xl [&_svg]:!text-[3.5rem]" />
+              <CTAButton variant="form" size="2xl" fullWidth showDescription className="!h-20 !px-8 [&_span]:!text-4xl [&_svg]:!text-[3.5rem]" />
             </div>
           </div>
         </div>

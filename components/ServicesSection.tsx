@@ -7,21 +7,21 @@ export default function ServicesSection() {
   const services = [
     {
       title: '遺品整理',
-      description: 'ご家族の大切な思い出の詰まった品を丁寧に整理致します。',
+      description: 'ご家族の大切な思い出の詰まった品を丁寧に整理いたします。',
       image: '/images/ihinseiri.jpg',
       width: 400,
       height: 300
     },
     {
       title: '不用品回収・買取',
-      description: '遺品整理等で出た大型家具などの回収も致します。また、リサイクル法に基づき処理致します。',
+      description: '遺品整理等で出た大型家具などの回収もいたします。また、リサイクル法に基づき処理いたします。',
       image: '/images/fuyouhin.jpg',
       width: 400,
       height: 300
     },
     {
       title: 'ハウスクリーニング・ゴミ屋敷清掃',
-      description: 'ゴミ屋敷もスッキリキレイにクリーニング致します。安心してお任せください。',
+      description: 'ゴミ屋敷もスッキリキレイにクリーニングいたします。安心してお任せください。',
       image: '/images/gomiyashiki.jpg',
       width: 400,
       height: 300

@@ -43,21 +43,28 @@ export default function Home() {
                     0120-551-669
                   </a>
                 </p>
-                <p className="text-gray-400 text-sm">受付時間: 9:00〜18:00</p>
+                <p className="text-gray-400 text-sm">受付日時: 土日対応可能 9時〜18時</p>
               </div>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold mb-4">サービスエリア</h3>
-              <p className="text-gray-400">
-                広島県全域<br />
-                ※一部地域を除く
-              </p>
+              <h3 className="text-xl font-bold mb-4">リンク</h3>
+              <div className="space-y-2">
+                <p>
+                  <a href="https://hiroshima-maple.com/company/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-accent transition">
+                    会社概要
+                  </a>
+                </p>
+                <p className="text-gray-400">
+                  広島県全域<br />
+                  ※一部地域を除く
+                </p>
+              </div>
             </div>
           </div>
 
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; {new Date().getFullYear()} メイプル All rights reserved.</p>
+            <p>&copy; 株式会社メイプル All rights reserved.</p>
           </div>
         </div>
       </footer>

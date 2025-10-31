@@ -48,7 +48,7 @@ export default function RootLayout({
           itemOffered: {
             '@type': 'Service',
             name: '遺品整理',
-            description: 'ご家族の大切な思い出の詰まった品を丁寧に整理致します',
+            description: 'ご家族の大切な思い出の詰まった品を丁寧に整理いたします',
           },
         },
         {
@@ -82,7 +82,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body className="bg-gray-900">{children}</body>
     </html>
   )
 }

@@ -1,31 +1,27 @@
 'use client'
 
 import Image from 'next/image'
-import CTAButton from './CTAButton'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 export default function ReasonsSection() {
   const reasons = [
     {
-      title: '広島地域密着だからこその機動力',
-      description: 'メイプルは広島地域密着で不用品回収事業をしています。そのため、他県でも不用品回収をしている業者より迅速かつ安価に対応が可能です！',
-      image: '/images/chiiki.jpg',
-      width: 400,
-      height: 300
+      number: '1',
+      title: '年間工事100件以上、30年以上の圧倒的な実績と経験',
+      description: 'メイプルでは年間工事100件以上、30年以上にわたり圧倒的な実績と経験で、迅速かつ確実に工事を行います。',
+      image: '/images/chiiki.jpg'
     },
     {
-      title: '下請け不在だからこその低単価',
-      description: '大手の不用品回収会社などは、下請け任せにして自社で不用品回収ができない会社がほとんどです。こうなってしまうと、不用品回収はたいへん高価になってしまいます。メイプルのお片付けは、そのようなことがないため、他社より安価に対応させていただきます！',
-      image: '/images/shitauke.jpg',
-      width: 400,
-      height: 300
+      number: '2',
+      title: '近隣クレーム0件を目指す、安心安全な施工・管理',
+      description: 'お客様とお客様のご家族のために、メイプルは「近隣クレーム0件」を目指す安心安全な施工・管理に徹底して取り組んでいます。',
+      image: '/images/shitauke.jpg'
     },
     {
-      title: '女性がいくから安心対応',
-      description: 'メイプルのお片付けでは、お客様のパーソナルスペースに立ち入らせていただくことが多いです。そのためご要望があった場合には、女性スタッフがうかがわせていただくようにさせていただいております。',
-      image: '/images/fuyouhin.jpg',
-      width: 400,
-      height: 300
+      number: '3',
+      title: '中間マージンを抑えた納得の料金体系',
+      description: '解体のプロであるメイプルなら中間マージンを削ぎ、さまざまなコストカットの実現により、納得の料金体系でクオリティの高いサービスをご提供しています。',
+      image: '/images/fuyouhin.jpg'
     }
   ]
 
@@ -46,31 +42,41 @@ export default function ReasonsSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
           {reasons.map((reason, index) => (
             <div
               key={index}
               ref={reasonAnimations[index].ref}
-              className={`bg-gradient-to-br from-primary to-primary-dark text-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition fade-in-up ${reasonAnimations[index].isVisible ? 'visible' : ''}`}
+              className={`rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition fade-in-up ${reasonAnimations[index].isVisible ? 'visible' : ''}`}
+              style={{ backgroundColor: '#F5E6D3' }}
             >
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-4">{reason.title}</h3>
-                <p className="text-lg leading-relaxed mb-6">{reason.description}</p>
-              </div>
-
-              <div className="relative h-64 bg-white">
+              {/* 上部：画像（半円形の下部分） */}
+              <div className="relative h-80 overflow-hidden">
                 <Image
                   src={reason.image}
                   alt={reason.title}
                   fill
                   className="object-cover"
                 />
+                {/* 下部を半円形にマスク */}
+                <div className="absolute bottom-0 left-0 right-0 h-16" style={{ backgroundColor: '#F5E6D3', clipPath: 'ellipse(100% 100% at 50% 100%)' }}></div>
+              </div>
+
+              {/* 下部：ベージュ背景でテキスト */}
+              <div className="px-6 pb-6" style={{ backgroundColor: '#F5E6D3', marginTop: '-6px' }}>
+                {/* タイトルと番号を横並び */}
+                <div className="flex items-center justify-between gap-4 mb-3">
+                  <h3 className="text-2xl font-bold text-justify leading-relaxed flex-1" style={{ color: '#572A06' }}>{reason.title}</h3>
+                  <div className="text-8xl font-bold text-secondary flex-shrink-0">
+                    {reason.number}
+                  </div>
+                </div>
+                <p className="text-base leading-relaxed text-gray-700 text-justify">
+                  {reason.description}
+                </p>
               </div>
             </div>
           ))}
-
-          {/* Empty space for layout */}
-          <div></div>
         </div>
       </div>
     </section>

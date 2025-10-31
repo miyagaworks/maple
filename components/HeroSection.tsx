@@ -19,7 +19,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative bg-secondary pt-12 md:pt-16 pb-12 md:pb-16">
+    <section className="relative bg-secondary pt-12 md:pt-16 pb-12 md:pb-16 xl:pb-16">
       <div className="container mx-auto px-4 relative z-10">
         {/* PC版レイアウト */}
         <div className="hidden xl:block">
@@ -41,34 +41,34 @@ export default function HeroSection() {
                   className="w-full"
                 />
                 <div className="absolute inset-0 flex flex-col justify-center px-16 py-8">
-                  <p className="text-xl leading-relaxed text-gray-700">
+                  <h4 className="text-xl leading-relaxed text-gray-700">
                     ごみ屋敷、荒れた納屋、倉庫<br />
                     家財の回収・仕分け・運び出しまで<br />
                     解体専門のプロに<br />
                     まとめてお任せください。
-                  </p>
+                  </h4>
                 </div>
               </div>
 
               {/* バッジ */}
               <div className="flex gap-6 relative z-20 justify-start">
                 <div className={`rounded-full shadow-lg flex flex-col items-center justify-center border-4 border-white flex-shrink-0 ${animate ? 'animate-badge-1' : ''}`} style={{ width: '220px', height: '220px', backgroundColor: '#ffd700', transform: animate ? '' : 'scale(0)', aspectRatio: '1' }}>
-                  <FaBolt className="text-6xl mb-2 text-gray-900" />
-                  <div className="text-2xl leading-tight text-center font-bold text-gray-900">
+                  <FaBolt className="text-6xl mb-2" style={{ color: '#572A06' }} />
+                  <div className="text-2xl leading-tight text-center font-bold" style={{ color: '#572A06' }}>
                     <div>スピード対応</div>
                     <div>最速即日</div>
                   </div>
                 </div>
                 <div className={`rounded-full shadow-lg flex flex-col items-center justify-center border-4 border-white flex-shrink-0 ${animate ? 'animate-badge-2' : ''}`} style={{ width: '220px', height: '220px', backgroundColor: '#ffcdec', transform: animate ? '' : 'scale(0)', aspectRatio: '1' }}>
-                  <FaHeart className="text-6xl mb-2 text-gray-900" />
-                  <div className="text-2xl leading-tight text-center font-bold text-gray-900">
+                  <FaHeart className="text-6xl mb-2" style={{ color: '#572A06' }} />
+                  <div className="text-2xl leading-tight text-center font-bold" style={{ color: '#572A06' }}>
                     <div>きめ細やかな</div>
                     <div>女性が対応</div>
                   </div>
                 </div>
                 <div className={`rounded-full shadow-lg flex flex-col items-center justify-center border-4 border-white flex-shrink-0 ${animate ? 'animate-badge-3' : ''}`} style={{ width: '220px', height: '220px', backgroundColor: '#97cfff', transform: animate ? '' : 'scale(0)', aspectRatio: '1' }}>
-                  <FaYenSign className="text-6xl mb-2 text-gray-900" />
-                  <div className="text-2xl leading-tight text-center font-bold text-gray-900">
+                  <FaYenSign className="text-6xl mb-2" style={{ color: '#572A06' }} />
+                  <div className="text-2xl leading-tight text-center font-bold" style={{ color: '#572A06' }}>
                     <div>県内最安値を</div>
                     <div>目指します</div>
                   </div>
@@ -91,12 +91,15 @@ export default function HeroSection() {
           </div>
 
           {/* CTAボタン */}
-          <div className="flex gap-6 justify-center max-w-6xl mx-auto">
-            <div className="flex-1">
-              <CTAButton variant="phone" size="2xl" fullWidth className="!h-20 !px-8 [&_span]:!text-4xl [&_img]:!w-14 [&_img]:!h-14" />
-            </div>
-            <div className="flex-1">
-              <CTAButton variant="form" size="2xl" fullWidth className="!h-20 !px-8 [&_span]:!text-4xl [&_svg]:!text-[3.5rem]" />
+          <div className="max-w-6xl mx-auto">
+            <div className="border-t-2 border-secondary-dark mb-16"></div>
+            <div className="flex gap-6 justify-center">
+              <div className="flex-1">
+                <CTAButton variant="phone" size="2xl" fullWidth showDescription className="!h-20 !px-8 [&_span]:!text-4xl [&_img]:!w-14 [&_img]:!h-14" />
+              </div>
+              <div className="flex-1">
+                <CTAButton variant="form" size="2xl" fullWidth showDescription className="!h-20 !px-8 [&_span]:!text-4xl [&_svg]:!text-[3.5rem]" />
+              </div>
             </div>
           </div>
         </div>
@@ -111,22 +114,22 @@ export default function HeroSection() {
           {/* バッジ */}
           <div className="flex gap-4 mb-6 justify-center relative z-20">
             <div className={`rounded-full shadow-lg flex flex-col items-center justify-center border-4 border-white flex-shrink-0 ${animate ? 'animate-badge-1' : ''}`} style={{ width: '180px', height: '180px', backgroundColor: '#ffd700', transform: animate ? '' : 'scale(0)', aspectRatio: '1' }}>
-              <FaBolt className="text-5xl mb-2 text-gray-900" />
-              <div className="text-lg leading-tight text-center font-bold text-gray-900">
+              <FaBolt className="text-5xl mb-2" style={{ color: '#572A06' }} />
+              <div className="text-lg leading-tight text-center font-bold" style={{ color: '#572A06' }}>
                 <div>スピード対応</div>
                 <div>最速即日</div>
               </div>
             </div>
             <div className={`rounded-full shadow-lg flex flex-col items-center justify-center border-4 border-white flex-shrink-0 ${animate ? 'animate-badge-2' : ''}`} style={{ width: '180px', height: '180px', backgroundColor: '#ffcdec', transform: animate ? '' : 'scale(0)', aspectRatio: '1' }}>
-              <FaHeart className="text-5xl mb-2 text-gray-900" />
-              <div className="text-lg leading-tight text-center font-bold text-gray-900">
+              <FaHeart className="text-5xl mb-2" style={{ color: '#572A06' }} />
+              <div className="text-lg leading-tight text-center font-bold" style={{ color: '#572A06' }}>
                 <div>きめ細やかな</div>
                 <div>女性が対応</div>
               </div>
             </div>
             <div className={`rounded-full shadow-lg flex flex-col items-center justify-center border-4 border-white flex-shrink-0 ${animate ? 'animate-badge-3' : ''}`} style={{ width: '180px', height: '180px', backgroundColor: '#97cfff', transform: animate ? '' : 'scale(0)', aspectRatio: '1' }}>
-              <FaYenSign className="text-5xl mb-2 text-gray-900" />
-              <div className="text-lg leading-tight text-center font-bold text-gray-900">
+              <FaYenSign className="text-5xl mb-2" style={{ color: '#572A06' }} />
+              <div className="text-lg leading-tight text-center font-bold" style={{ color: '#572A06' }}>
                 <div>県内最安値を</div>
                 <div>目指します</div>
               </div>
@@ -143,12 +146,12 @@ export default function HeroSection() {
               className="w-full"
             />
             <div className="absolute inset-0 flex flex-col items-center justify-start pt-20 px-10">
-              <p className="text-3xl leading-relaxed text-gray-700">
+              <h4 className="text-3xl leading-relaxed text-gray-700">
                 ごみ屋敷、荒れた納屋、倉庫<br />
                 家財の回収・仕分け・運び出しまで<br />
                 解体専門のプロに<br />
                 まとめてお任せください。
-              </p>
+              </h4>
             </div>
           </div>
 
@@ -176,22 +179,22 @@ export default function HeroSection() {
           {/* バッジ */}
           <div className="flex justify-center gap-3 mb-6 relative z-20">
             <div className={`rounded-full shadow-lg flex flex-col items-center justify-center border-2 border-white ${animate ? 'animate-badge-1' : ''}`} style={{ width: '104px', height: '104px', backgroundColor: '#ffd700', transform: animate ? '' : 'scale(0)' }}>
-              <FaBolt className="text-2xl mb-1 text-gray-900" />
-              <div className="text-[14px] leading-tight text-center font-bold text-gray-900">
+              <FaBolt className="text-2xl mb-1" style={{ color: '#572A06' }} />
+              <div className="text-[14px] leading-tight text-center font-bold" style={{ color: '#572A06' }}>
                 <div>スピード対応</div>
                 <div>最速即日</div>
               </div>
             </div>
             <div className={`rounded-full shadow-lg flex flex-col items-center justify-center border-2 border-white ${animate ? 'animate-badge-2' : ''}`} style={{ width: '104px', height: '104px', backgroundColor: '#ffcdec', transform: animate ? '' : 'scale(0)' }}>
-              <FaHeart className="text-2xl mb-1 text-gray-900" />
-              <div className="text-[14px] leading-tight text-center font-bold text-gray-900">
+              <FaHeart className="text-2xl mb-1" style={{ color: '#572A06' }} />
+              <div className="text-[14px] leading-tight text-center font-bold" style={{ color: '#572A06' }}>
                 <div>きめ細やかな</div>
                 <div>女性が対応</div>
               </div>
             </div>
             <div className={`rounded-full shadow-lg flex flex-col items-center justify-center border-2 border-white ${animate ? 'animate-badge-3' : ''}`} style={{ width: '104px', height: '104px', backgroundColor: '#97cfff', transform: animate ? '' : 'scale(0)' }}>
-              <FaYenSign className="text-2xl mb-1 text-gray-900" />
-              <div className="text-[14px] leading-tight text-center font-bold text-gray-900">
+              <FaYenSign className="text-2xl mb-1" style={{ color: '#572A06' }} />
+              <div className="text-[14px] leading-tight text-center font-bold" style={{ color: '#572A06' }}>
                 <div>県内最安値を</div>
                 <div>目指します</div>
               </div>
@@ -208,12 +211,12 @@ export default function HeroSection() {
               className="w-full"
             />
             <div className="absolute inset-0 flex flex-col items-center justify-start pt-10 px-8">
-              <p className="leading-relaxed text-gray-700" style={{ fontSize: '1.05rem' }}>
+              <h4 className="leading-relaxed text-gray-700" style={{ fontSize: '1.05rem' }}>
                 ごみ屋敷、荒れた納屋、倉庫<br />
                 家財の回収・仕分け・運び出しまで<br />
                 解体専門のプロに<br />
                 まとめてお任せください。
-              </p>
+              </h4>
             </div>
           </div>
 
