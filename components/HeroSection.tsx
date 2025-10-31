@@ -95,10 +95,10 @@ export default function HeroSection() {
             <div className="border-t-2 border-secondary-dark mb-16"></div>
             <div className="flex gap-6 justify-center">
               <div className="flex-1">
-                <CTAButton variant="phone" size="2xl" fullWidth showDescription className="!h-20 !px-8 [&_span]:!text-4xl [&_img]:!w-14 [&_img]:!h-14" />
+                <CTAButton variant="phone" size="2xl" fullWidth showDescription className="!h-20 !px-8 [&_span]:!text-4xl [&_img]:!w-14 [&_img]:!h-14 [&_p]:!text-[#572a06]" />
               </div>
               <div className="flex-1">
-                <CTAButton variant="form" size="2xl" fullWidth showDescription className="!h-20 !px-8 [&_span]:!text-4xl [&_svg]:!text-[3.5rem]" />
+                <CTAButton variant="form" size="2xl" fullWidth showDescription className="!h-20 !px-8 [&_span]:!text-4xl [&_svg]:!text-[3.5rem] [&_p]:!text-[#572a06]" />
               </div>
             </div>
           </div>

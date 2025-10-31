@@ -25,21 +25,21 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden xl:flex items-center space-x-8">
-          <Link href="#plans" className="text-link hover:text-link-hover transition font-medium flex items-center gap-2">
+          <Link href="#plans" className="text-link hover:text-link-hover transition font-medium flex items-center gap-2 border-b-2 border-transparent hover:border-link-hover pt-2 pb-1">
             <FaYenSign className="flex-shrink-0" style={{ transform: 'translateY(1px)' }} />
             <span className="leading-none">料金プラン</span>
           </Link>
-          <Link href="#services" className="text-link hover:text-link-hover transition font-medium flex items-center gap-2">
+          <Link href="#services" className="text-link hover:text-link-hover transition font-medium flex items-center gap-2 border-b-2 border-transparent hover:border-link-hover pt-2 pb-1">
             <FaTruck className="flex-shrink-0 scale-x-[-1]" style={{ transform: 'translateY(1px) scaleX(-1)' }} />
             <span className="leading-none">サービス</span>
           </Link>
-          <Link href="#flow" className="text-link hover:text-link-hover transition font-medium flex items-center gap-2">
+          <Link href="#flow" className="text-link hover:text-link-hover transition font-medium flex items-center gap-2 border-b-2 border-transparent hover:border-link-hover pt-2 pb-1">
             <FaClipboardList className="flex-shrink-0" style={{ transform: 'translateY(1px)' }} />
             <span className="leading-none">ご利用の流れ</span>
           </Link>
           <a
             href="tel:0120-551-669"
-            className="hidden md:flex bg-link hover:bg-link-hover text-white font-bold py-2 px-6 rounded-full transition items-center justify-center gap-2"
+            className="hidden md:flex bg-link hover:bg-link-hover text-white hover:text-white font-bold py-2 px-6 rounded-full transition items-center justify-center gap-2"
           >
             <Image src="/images/freedial.svg" alt="フリーダイヤル" width={24} height={24} className="flex-shrink-0" />
             <span className="text-lg leading-none -translate-y-0.5">0120-551-669</span>
