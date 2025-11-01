@@ -9,24 +9,33 @@ export default function ProblemsSection() {
     {
       number: '1',
       title: '家具や家電が重くて運べない...',
-      description: `当社にご依頼いただく方には、ご高齢の方が最も多いです。皆さま口をそろえておっしゃるのが、「こんなことから依頼していいの？」。しかし、メイプルにはお気遣いいただく必要はございません！
+      description: {
+        text: `当社にご依頼いただく方には、ご高齢の方が最も多いです。皆さま口をそろえておっしゃるのが、「こんなことから依頼していいの？」。しかし、メイプルにはお気遣いいただく必要はございません！
 
 むしろ、「自分ではちょっと...」程度の片づけにこそ、メイプルのお片付けをご利用いただければと思います。`,
+        highlight: 'こんなことから依頼していいの？'
+      },
       image: '/images/tansu.png'
     },
     {
       number: '2',
       title: '料金が不透明で、いくらかかるか心配...',
-      description: `不用品回収業界の料金は不透明でわかりにくいという話がよくあります。
+      description: {
+        text: `不用品回収業界の料金は不透明でわかりにくいという話がよくあります。
 メイプルのお片付けは、Webサイトに記載している料金で実施しています。
 地元密着で長年広島の皆様にご愛顧いただいておりますメイプルは、明朗会計でやらせていただきますので、ご安心ください！`,
+        highlight: '不用品回収業界の料金は不透明でわかりにくい'
+      },
       image: '/images/akutoku.png'
     },
     {
       number: '3',
       title: '遺品整理をしなきゃいけないけど疲れ果ててしまった...',
-      description: `お気持ち、大変よくわかります。ご家族を亡くされた中での遺品整理などはどうしても心身ともに疲弊してしまうものです。
+      description: {
+        text: `お気持ち、大変よくわかります。ご家族を亡くされた中での遺品整理などはどうしても心身ともに疲弊してしまうものです。
 弊社では専門のスタッフがご供養からしっかりさせて頂きますので、ぜひお任せください。`,
+        highlight: '遺品整理などはどうしても心身ともに疲弊してしまうもの'
+      },
       image: '/images/photowoman.png'
     }
   ]
@@ -67,7 +76,16 @@ export default function ProblemsSection() {
                     <h3 className="text-3xl font-bold mb-3 text-justify">{problem.title}</h3>
                     <div className="border-t-2 border-white/30 mb-6"></div>
                     <p className="text-lg leading-relaxed whitespace-pre-line text-justify">
-                      {problem.description}
+                      {problem.description.text.split(problem.description.highlight).map((part, i, arr) => (
+                        <span key={i}>
+                          {part}
+                          {i < arr.length - 1 && (
+                            <span className={`font-bold px-1 py-0.5 rounded ${problemAnimations[index].isVisible ? 'animate-highlighter' : ''}`} style={{ backgroundImage: 'linear-gradient(transparent 50%, #7ed957 50%)', backgroundRepeat: 'no-repeat', backgroundPosition: 'left bottom', backgroundSize: problemAnimations[index].isVisible ? undefined : '0% 60%' }}>
+                              {problem.description.highlight}
+                            </span>
+                          )}
+                        </span>
+                      ))}
                     </p>
                   </div>
 
@@ -95,7 +113,16 @@ export default function ProblemsSection() {
                   {/* 下部：左にテキスト、右に画像 */}
                   <div className="grid grid-cols-2 gap-8 items-start">
                     <p className="text-lg leading-relaxed whitespace-pre-line text-justify">
-                      {problem.description}
+                      {problem.description.text.split(problem.description.highlight).map((part, i, arr) => (
+                        <span key={i}>
+                          {part}
+                          {i < arr.length - 1 && (
+                            <span className={`font-bold px-1 py-0.5 rounded ${problemAnimations[index].isVisible ? 'animate-highlighter' : ''}`} style={{ backgroundImage: 'linear-gradient(transparent 50%, #7ed957 50%)', backgroundRepeat: 'no-repeat', backgroundPosition: 'left bottom', backgroundSize: problemAnimations[index].isVisible ? undefined : '0% 60%' }}>
+                              {problem.description.highlight}
+                            </span>
+                          )}
+                        </span>
+                      ))}
                     </p>
 
                     <div className="relative w-full aspect-square bg-white rounded-lg overflow-hidden">
@@ -120,7 +147,16 @@ export default function ProblemsSection() {
                       <h3 className="text-3xl font-bold mb-3 text-justify">{problem.title}</h3>
                       <div className="border-t-2 border-white/30 mb-6"></div>
                       <p className="text-lg leading-relaxed whitespace-pre-line text-justify">
-                        {problem.description}
+                        {problem.description.text.split(problem.description.highlight).map((part, i, arr) => (
+                          <span key={i}>
+                            {part}
+                            {i < arr.length - 1 && (
+                              <span className={`font-bold px-1 py-0.5 rounded ${problemAnimations[index].isVisible ? 'animate-highlighter' : ''}`} style={{ backgroundImage: 'linear-gradient(transparent 50%, #7ed957 50%)', backgroundRepeat: 'no-repeat', backgroundPosition: 'left bottom', backgroundSize: problemAnimations[index].isVisible ? undefined : '0% 60%' }}>
+                                {problem.description.highlight}
+                              </span>
+                            )}
+                          </span>
+                        ))}
                       </p>
                     </div>
 
