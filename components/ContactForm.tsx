@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, FormEvent, useEffect } from 'react'
+import { useState, FormEvent } from 'react'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 export default function ContactForm() {
@@ -20,7 +20,6 @@ export default function ContactForm() {
 
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
-  const [mapUrl, setMapUrl] = useState<string>('')
 
   const titleAnimation = useScrollAnimation(0.1)
   const formAnimation = useScrollAnimation<HTMLFormElement>(0.2)
@@ -66,17 +65,6 @@ export default function ContactForm() {
 
     setFormData(prev => ({ ...prev, [name]: sanitizedValue }))
   }
-
-  // 番地入力時にGoogle Mapを更新
-  useEffect(() => {
-    if (formData.prefecture && formData.city && formData.address) {
-      const fullAddress = `${formData.prefecture}${formData.city}${formData.address}${formData.building}`
-      const encodedAddress = encodeURIComponent(fullAddress)
-      setMapUrl(`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodedAddress}&zoom=16`)
-    } else {
-      setMapUrl('')
-    }
-  }, [formData.prefecture, formData.city, formData.address, formData.building])
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
@@ -284,24 +272,6 @@ export default function ContactForm() {
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:outline-none text-lg placeholder:align-middle"
                   />
                 </div>
-
-                {/* Google Map */}
-                {mapUrl && (
-                  <div>
-                    <label className="block text-lg font-semibold mb-2">
-                      訪問先地図の確認
-                    </label>
-                    <div className="w-full h-64 md:h-96 rounded-2xl overflow-hidden border-2 border-gray-300">
-                      <iframe
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        loading="lazy"
-                        src={mapUrl}
-                      ></iframe>
-                    </div>
-                  </div>
-                )}
 
                 {/* メールアドレス */}
                 <div>
